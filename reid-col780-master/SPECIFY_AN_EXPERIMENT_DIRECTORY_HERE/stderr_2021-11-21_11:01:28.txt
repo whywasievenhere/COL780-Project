@@ -1,0 +1,58 @@
+/Users/shreyansnagori/opt/anaconda3/lib/python3.7/site-packages/torch/nn/init.py:388: UserWarning: Initializing zero-element tensors is a no-op
+  warnings.warn("Initializing zero-element tensors is a no-op")
+./aligned_reid/model/Model.py:20: UserWarning: nn.init.normal is now deprecated in favor of nn.init.normal_.
+  init.normal(self.fc.weight, std=0.001)
+./aligned_reid/model/Model.py:21: UserWarning: nn.init.constant is now deprecated in favor of nn.init.constant_.
+  init.constant(self.fc.bias, 0)
+Exception in thread Thread-4:
+Traceback (most recent call last):
+  File "/Users/shreyansnagori/opt/anaconda3/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/Users/shreyansnagori/opt/anaconda3/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "./aligned_reid/dataset/Prefetcher.py", line 107, in enqueue
+    element = self.get_element(ptr - 1)
+  File "./aligned_reid/dataset/TestSet.py", line 58, in get_sample
+    im_path = osp.join(self.im_dir, im_name)
+  File "/Users/shreyansnagori/opt/anaconda3/lib/python3.7/posixpath.py", line 94, in join
+    genericpath._check_arg_types('join', a, *p)
+  File "/Users/shreyansnagori/opt/anaconda3/lib/python3.7/genericpath.py", line 155, in _check_arg_types
+    raise TypeError("Can't mix strings and bytes in path components") from None
+TypeError: Can't mix strings and bytes in path components
+Exception in thread Thread-3:
+Traceback (most recent call last):
+  File "/Users/shreyansnagori/opt/anaconda3/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/Users/shreyansnagori/opt/anaconda3/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "./aligned_reid/dataset/Prefetcher.py", line 107, in enqueue
+    element = self.get_element(ptr - 1)
+  File "./aligned_reid/dataset/TestSet.py", line 58, in get_sample
+    im_path = osp.join(self.im_dir, im_name)
+  File "/Users/shreyansnagori/opt/anaconda3/lib/python3.7/posixpath.py", line 94, in join
+    genericpath._check_arg_types('join', a, *p)
+  File "/Users/shreyansnagori/opt/anaconda3/lib/python3.7/genericpath.py", line 155, in _check_arg_types
+    raise TypeError("Can't mix strings and bytes in path components") from None
+TypeError: Can't mix strings and bytes in path components
+
+
+Traceback (most recent call last):
+  File "script/experiment/train.py", line 632, in <module>
+    main()
+  File "script/experiment/train.py", line 389, in main
+    test(load_model_weight=True)
+  File "script/experiment/train.py", line 386, in test
+    use_local_distance=use_local_distance)
+  File "./aligned_reid/dataset/TestSet.py", line 188, in eval
+    self.extract_feat(normalize_feat)
+  File "./aligned_reid/dataset/TestSet.py", line 101, in extract_feat
+    ims_, ids_, cams_, im_names_, marks_, done = self.next_batch()
+  File "./aligned_reid/dataset/TestSet.py", line 70, in next_batch
+    samples, self.epoch_done = self.prefetcher.next_batch()
+  File "./aligned_reid/dataset/Prefetcher.py", line 181, in next_batch
+    sample = self.enqueuer.queue.get()
+  File "/Users/shreyansnagori/opt/anaconda3/lib/python3.7/queue.py", line 170, in get
+    self.not_empty.wait()
+  File "/Users/shreyansnagori/opt/anaconda3/lib/python3.7/threading.py", line 296, in wait
+    waiter.acquire()
+KeyboardInterrupt

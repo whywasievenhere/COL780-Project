@@ -1,0 +1,24 @@
+/Users/shreyansnagori/opt/anaconda3/lib/python3.7/site-packages/torch/nn/init.py:388: UserWarning: Initializing zero-element tensors is a no-op
+  warnings.warn("Initializing zero-element tensors is a no-op")
+./aligned_reid/model/Model.py:20: UserWarning: nn.init.normal is now deprecated in favor of nn.init.normal_.
+  init.normal(self.fc.weight, std=0.001)
+./aligned_reid/model/Model.py:21: UserWarning: nn.init.constant is now deprecated in favor of nn.init.constant_.
+  init.constant(self.fc.bias, 0)
+./aligned_reid/utils/metric.py:179: RuntimeWarning: invalid value encountered in double_scalars
+  return float(np.sum(aps)) / np.sum(is_valid_query)
+Traceback (most recent call last):
+  File "script/experiment/train.py", line 632, in <module>
+    main()
+  File "script/experiment/train.py", line 389, in main
+    test(load_model_weight=True)
+  File "script/experiment/train.py", line 386, in test
+    use_local_distance=use_local_distance)
+  File "./aligned_reid/dataset/TestSet.py", line 226, in eval
+    mAP, cmc_scores = compute_score(global_q_g_dist)
+  File "./aligned_reid/dataset/TestSet.py", line 204, in compute_score
+    topk=10)
+  File "./aligned_reid/dataset/TestSet.py", line 168, in eval_map_cmc
+    topk=topk)
+  File "./aligned_reid/utils/metric.py", line 100, in cmc
+    raise RuntimeError("No valid query")
+RuntimeError: No valid query
